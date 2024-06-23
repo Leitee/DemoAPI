@@ -10,12 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Commons\ResultExtensions.cs" />
+    <Compile Remove="Endpoints\Author\Get.Response.cs" />
+    <Compile Remove="Endpoints\Author\PostAuthor.Validator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Endpoints\Author\PostAuthor.Validator.cs" />
+    <None Include="Endpoints\Author\GetAuthorById.Validator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ardalis.Result.AspNetCore" Version="9.1.0" />
     <PackageReference Include="FastEndpoints" Version="5.26.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
+    <PackageReference Include="FastEndpoints.Swagger" Version="5.26.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>

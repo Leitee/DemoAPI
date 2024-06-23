@@ -1,9 +1,4 @@
-﻿// <copyright file="LinkMethod.cs" company="Betting Technologies Australia PTY LTD">
-// Copyright by Betting Technologies Australia PTY LTD. All rights reserved.
-// </copyright>
-
-// ReSharper disable InconsistentNaming
-namespace DemoAPI.Commons
+﻿namespace DemoAPI.Commons
 {
 	using System.ComponentModel;
 	using Newtonsoft.Json;

@@ -1,8 +1,4 @@
-﻿// <copyright file="JsonPropertyNames.cs" company="Betting Technologies Australia PTY LTD">
-// Copyright by Betting Technologies Australia PTY LTD. All rights reserved.
-// </copyright>
-
-namespace DemoAPI.Commons
+﻿namespace DemoAPI.Commons
 {
 	/// <summary>
 	/// Defines constants for Json property names.
@@ -40,7 +36,7 @@ namespace DemoAPI.Commons
 		public const string Links = "_links";
 
 		/// <summary>
-		/// Event Sates Property Name.
+		/// Event Sates Property Title.
 		/// </summary>
 		public const string EventStates = "eventStates";
 

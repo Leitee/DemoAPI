@@ -1,11 +1,7 @@
-﻿// <copyright file="IBaseResponse.cs" company="Betting Technologies Australia PTY LTD">
-// Copyright by Betting Technologies Australia PTY LTD. All rights reserved.
-// </copyright>
-
-namespace DemoAPI.Commons
+﻿namespace DemoAPI.Commons
 {
 	/// <summary>
-	/// Encapsulation of paramters for a BettingEdge Response
+	/// Encapsulation of parameters for a BettingEdge Response
 	/// This is the base definition from which all BettingEdge Response definitions are inherited
 	/// </summary>
 	public interface IBaseResponse : ILinkResponse, IErrorResponse

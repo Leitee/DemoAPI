@@ -1,8 +1,4 @@
-﻿// <copyright file="Link.cs" company="Betting Technologies Australia PTY LTD">
-// Copyright by Betting Technologies Australia PTY LTD. All rights reserved.
-// </copyright>
-
-namespace DemoAPI.Commons
+﻿namespace DemoAPI.Commons
 {
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Converters;

@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Endpoints\Author\PostAuthor.Validator.cs" />
+    <None Include="Endpoints\Author\PostAuthorRequest.Validator.cs" />
     <None Include="Endpoints\Author\GetAuthorById.Validator.cs" />
   </ItemGroup>
 

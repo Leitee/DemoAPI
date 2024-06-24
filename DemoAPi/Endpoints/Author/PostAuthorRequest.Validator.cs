@@ -6,7 +6,7 @@ namespace DemoAPI.Endpoints.Author
   {
     public PostAuthorValidator()
     {
-      RuleFor(x => x.Firstname).NotEmpty().MaximumLength(50);
+      RuleFor(x => x.Id).NotEmpty();
 		}
   }
 }

@@ -1,10 +1,10 @@
 ﻿namespace DemoAPI.Commons
 {
-	public class PaginatedResponse<TModel> : ApiResponse<List<TModel>>
+	public class PaginatedResponse<TCollection, TDto> : ApiResponse<TCollection> where TCollection : class, IEnumerable<TDto>
 	{
-		public int TotalCount { get; set; }
-		public int PageSize { get; set; }
-		public int CurrentPage { get; set; }
-		public int TotalPages { get; set; }
+		public long TotalRecords { get; set; }
+		public long PageSize { get; set; }
+		public long PageNumber { get; set; }
+		public long TotalPages { get; set; }
 	}
 }

@@ -12,7 +12,7 @@ namespace DemoAPI.Commons
 	/// Encapsulation of paramters for a BettingEdge Authentication Response
 	/// This is the base definition from which all BettingEdge Response definitions are inherited
 	/// </summary>
-	public class ApiResponse<TModel> : IBaseResponse
+	public class ApiResponse<TModel> : IBaseResponse where TModel : class
 	{
 		[JsonProperty(PropertyName = JsonPropertyNames.Data, NullValueHandling = NullValueHandling.Ignore)]
 		public TModel Data { get; set; }

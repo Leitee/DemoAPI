@@ -1,6 +1,6 @@
 ﻿namespace DemoAPI.Commons
 {
-	public class PaginatedResponse<TCollection, TDto> : ApiResponse<TCollection> where TCollection : class, IEnumerable<TDto>
+	public class PaginatedResponse<TDto> : ApiResponse<IEnumerable<TDto>> where TDto : class
 	{
 		public long TotalRecords { get; set; }
 		public long PageSize { get; set; }

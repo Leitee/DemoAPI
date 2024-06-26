@@ -6,7 +6,7 @@ using MediatR;
 
 namespace DemoAPI.Endpoints.Author
 {
-	public class GetAuthorsEndpoint : EndpointWithoutRequest<PaginatedResponse<IEnumerable<AuthorDto>, AuthorDto>>
+	public class GetAuthorsEndpoint : EndpointWithoutRequest<PaginatedResponse<AuthorDto>>
 	{
 		private readonly IMediator _mediator;
 
@@ -22,10 +22,10 @@ namespace DemoAPI.Endpoints.Author
 				AllowAnonymous();
 		}
 
-		public override async Task<PaginatedResponse<IEnumerable<AuthorDto>, AuthorDto>> ExecuteAsync(CancellationToken ct)
+		public override async Task<PaginatedResponse<AuthorDto>> ExecuteAsync(CancellationToken ct)
 		{
 				var response = await _mediator.Send(new GetAuthorsListRequest(Page: 1, PageSize: 10), ct);
-				return response.ToPagedApiResponse<IEnumerable<AuthorDto>, AuthorDto>();
+				return response.ToApiResponse();
 		}
 	}
 }

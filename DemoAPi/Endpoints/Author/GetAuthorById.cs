@@ -1,6 +1,5 @@
-﻿using DemoAPI.Application.Author;
-using DemoAPI.Commons;
-using DemoAPI.Extensions;
+﻿using Ardalis.Result.AspNetCore;
+using DemoAPI.Application.Author;
 using FastEndpoints;
 using MediatR;
 using System.ComponentModel.DataAnnotations;
@@ -15,7 +14,7 @@ namespace DemoAPI.Endpoints.Author
 		public required Guid Id { get; init; }
 	}
 
-	public class GetAuthorById : Endpoint<GetAuthorByIdRequest, ApiResponse<AuthorDto>>
+	public class GetAuthorById : Endpoint<GetAuthorByIdRequest, IResult>
 	{
 		private readonly IMediator _mediator;
 
@@ -31,11 +30,11 @@ namespace DemoAPI.Endpoints.Author
 				AllowAnonymous();
 		}
 
-		public override async Task<ApiResponse<AuthorDto>> ExecuteAsync(GetAuthorByIdRequest req, CancellationToken ct)
+		public override async Task<IResult> ExecuteAsync(GetAuthorByIdRequest req, CancellationToken ct)
 		{
 			var query = new GetAuthorByIdQuery(req.Id);
 			var response = await _mediator.Send(query, ct);
-			return response.ToApiResponse();
+			return response.ToMinimalApiResult();
 		}
 	}
 }

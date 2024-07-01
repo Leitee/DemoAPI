@@ -1,9 +1,10 @@
 ﻿using Ardalis.Result;
+using DemoAPI.Application.Abstractions;
 using MediatR;
 
 namespace DemoAPI.Application.Author
 {
-	public record GetAuthorByIdQuery(Guid Id) : IRequest<Result<AuthorDto>>;
+	public record GetAuthorByIdQuery(Guid Id) : IQuery<AuthorDto>;
 
 
 	public class GetAuthorByIdHandler : IRequestHandler<GetAuthorByIdQuery, Result<AuthorDto>>

@@ -1,12 +1,11 @@
-﻿using DemoAPI.Application.Author;
-using DemoAPI.Commons;
-using DemoAPI.Extensions;
+﻿using Ardalis.Result.AspNetCore;
+using DemoAPI.Application.Author;
 using FastEndpoints;
 using MediatR;
 
 namespace DemoAPI.Endpoints.Author
 {
-	public class GetAuthorsEndpoint : EndpointWithoutRequest<PaginatedResponse<AuthorDto>>
+	public class GetAuthorsEndpoint : EndpointWithoutRequest<IResult>
 	{
 		private readonly IMediator _mediator;
 
@@ -22,10 +21,10 @@ namespace DemoAPI.Endpoints.Author
 				AllowAnonymous();
 		}
 
-		public override async Task<PaginatedResponse<AuthorDto>> ExecuteAsync(CancellationToken ct)
+		public override async Task<IResult> ExecuteAsync(CancellationToken ct)
 		{
 				var response = await _mediator.Send(new GetAuthorsListRequest(Page: 1, PageSize: 10), ct);
-				return response.ToApiResponse();
+				return response.ToMinimalApiResult();
 		}
 	}
 }

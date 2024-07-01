@@ -1,8 +1,9 @@
-﻿using FluentValidation;
+﻿using FastEndpoints;
+using FluentValidation;
 
 namespace DemoAPI.Endpoints.Author
 {
-	public class PostAuthorValidator : AbstractValidator<GetAuthorByIdRequest>
+	public class PostAuthorValidator : Validator<GetAuthorByIdRequest>
   {
     public PostAuthorValidator()
     {

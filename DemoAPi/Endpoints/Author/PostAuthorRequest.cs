@@ -1,8 +1,8 @@
 ﻿namespace DemoAPI.Endpoints.Author
 {
+	using Ardalis.Result.AspNetCore;
 	using DemoAPI.Application.Author;
 	using DemoAPI.Commons;
-	using DemoAPI.Extensions;
 	using FastEndpoints;
 	using MediatR;
 
@@ -29,13 +29,13 @@
 			Post(PostAuthorRequest.Route);
 		}
 
-		public async Task<ApiResponse<AuthorDto>> Handle(PostAuthorRequest request, CancellationToken cancellationToken)
+		public async Task<IResult> Handle(PostAuthorRequest request, CancellationToken cancellationToken)
 		{
 			var command = new CreateAuthorCommand(request.Firstname, request.Lastname, request.BirthDay);
 
 			var response = await _mediator.Send(command, cancellationToken);
 
-			return response.ToApiResponse();
+			return response.ToMinimalApiResult();
 		}
 	}
 }

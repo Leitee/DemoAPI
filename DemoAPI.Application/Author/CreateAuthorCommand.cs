@@ -1,9 +1,10 @@
 ﻿using Ardalis.Result;
+using DemoAPI.Application.Abstractions;
 using MediatR;
 
 namespace DemoAPI.Application.Author
 {
-	public record CreateAuthorCommand(string FirstName, string LastName, DateOnly BirthDay) : IRequest<Result<AuthorDto>>;
+	public record CreateAuthorCommand(string FirstName, string LastName, DateOnly BirthDay) : ICommand<AuthorDto>;
 
 	public class CreateAuthorHandler : IRequestHandler<CreateAuthorCommand, Result<AuthorDto>>
 	{
